@@ -208,6 +208,6 @@ namespace SimpleCalculatorWinForms
                 lblPartial.Text = "0";
             }
         }
-
+// Unneccesary comment
     }
 }
