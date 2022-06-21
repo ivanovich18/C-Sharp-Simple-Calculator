@@ -79,5 +79,36 @@ namespace SimpleCalculatorWinForms.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kanban_clear__1_ {
+            get {
+                object obj = ResourceManager.GetObject("kanban-clear (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_computer_keyboard_backspace_delete_key_computer_ic_clear_symbol_icon_clear_png_icon_16_x16_p_5cef6d86b6b492_0572540215591950147484 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-computer-keyboard-backspace-delete-key-computer-ic-clear-symbol-icon-clea" +
+                        "r-png-icon-16-x16-p-5cef6d86b6b492.0572540215591950147484", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WME8 {
+            get {
+                object obj = ResourceManager.GetObject("WME8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

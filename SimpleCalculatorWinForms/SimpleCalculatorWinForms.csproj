@@ -86,5 +86,14 @@
   <ItemGroup>
     <None Include="Resources\Calculator Design Win Forms1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WME8.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-computer-keyboard-backspace-delete-key-computer-ic-clear-symbol-icon-clear-png-icon-16-x16-p-5cef6d86b6b492.0572540215591950147484.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kanban-clear %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
