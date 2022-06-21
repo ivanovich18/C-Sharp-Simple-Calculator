@@ -118,7 +118,7 @@ namespace SimpleCalculatorWinForms
             lblPartial.Text = "-" + lblPartial.Text;
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void ClearAll()
         {
             lblPartial.Text = "0";
             num1 = 0;
@@ -130,38 +130,75 @@ namespace SimpleCalculatorWinForms
             lblOperation.Text = null;
         }
 
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+
         private void multiplyButton_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(lblPartial.Text);
-            operation = '*';
-            lblPartial.Text = ""; 
-            lblOperation.Text = "×";
+            try
+            {
+                num1 = float.Parse(lblPartial.Text);
+                operation = '*';
+                lblPartial.Text = "";
+                lblOperation.Text = "×";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Error!\nCan multiply only with two numbers as of the moment!\nWill work for that!");
+                ClearAll();
+            }
         }
 
         private void divideButton_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(lblPartial.Text);
-            operation = '/';
-            lblPartial.Text = "";
-            lblOperation.Text = "÷";
+            try
+            {
+                    num1 = float.Parse(lblPartial.Text);
+                    operation = '/';
+                    lblPartial.Text = "";
+                    lblOperation.Text = "÷";
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Error!\nCan divide only with two numbers as of the moment!\nWill work for that!");
+                ClearAll();
+            }
         }
 
         private void minusButton_Click(object sender, EventArgs e)
         {
-            num1 = float.Parse(lblPartial.Text);
-            operation = '-';
-            lblPartial.Text = "";
-            lblOperation.Text = "−";
+            try
+            {
+                num1 = float.Parse(lblPartial.Text);
+                operation = '-';
+                lblPartial.Text = "";
+                lblOperation.Text = "−";
+            }
+            catch (FormatException)
+            {
+                ClearAll();
+                MessageBox.Show("Error!\nCan subtract only with two numbers as of the moment!\nWill work for that!");
+            }
         }
 
         private void plusButton_Click(object sender, EventArgs e)
         {
-            lblPartial.Text = lblPartial.Text + " " + operation;
-            num1 = float.Parse(lblPartial.Text);
-            operation = '+';
-            result = result + num1;
-            lblPartial.Text = "";
-            lblOperation.Text = "+";
+            try
+            {
+                lblPartial.Text = lblPartial.Text + " " + operation;
+                num1 = float.Parse(lblPartial.Text);
+                operation = '+';
+                result = result + num1;
+                lblPartial.Text = "";
+                lblOperation.Text = "+";
+            }
+            catch (FormatException)
+            {
+                ClearAll();
+                MessageBox.Show("Error!\nCan add only with two numbers as of the moment!\nWill work for that!");
+            }
         }
 
         private void equalButton_Click(object sender, EventArgs e)
@@ -170,38 +207,39 @@ namespace SimpleCalculatorWinForms
             result = 0;
             if (lblPartial.Text.Equals("0") == false)
             {
-                switch (operation)
+                try
                 {
-                    case '+':
-                        num2 = float.Parse(lblPartial.Text);
-                        result = num1 + num2;
-                        break;
-                    case '-':
-                        num2 = float.Parse(lblPartial.Text);
-                        result = num1 - num2;
-                        break;
-                    case '/':
-                        if(num2.Equals(0))
-                        {
-                            lblTotal.Text = "Error";
-                        }
-                        else
-                        {
+                    switch (operation)
+                    {
+                        case '+':
                             num2 = float.Parse(lblPartial.Text);
-                            result = num1 / num2;
-                        }
-                        break;
-                    case '*':
-                        num2 = float.Parse(lblPartial.Text);
-                        result = num1 * num2;
-                        break;
-                    default:
-                        break;
+                            result = num1 + num2;
+                            break;
+                        case '-':
+                            num2 = float.Parse(lblPartial.Text);
+                            result = num1 - num2;
+                            break;
+                        case '/':
+                                num2 = float.Parse(lblPartial.Text);
+                                result = num1 / num2;
+                            break;
+                        case '*':
+                            num2 = float.Parse(lblPartial.Text);
+                            result = num1 * num2;
+                            break;
+                        default:
+                            break;
+                    }
+                    lblPartial.Text = null;
+                    lblTotal.Text = result.ToString();
+                    lblOperation.Text = null;
                 }
-            }
-            lblPartial.Text = null;
-            lblTotal.Text = result.ToString();
-            lblOperation.Text = null;
+                catch (FormatException)
+                {
+                    ClearAll();
+                    MessageBox.Show("Error!\nCan operate only with two numbers as of the moment!\nWill work for that!");
+                }
+            } 
         }
 
         private void backSpaceButton_Click(object sender, EventArgs e)
@@ -217,8 +255,7 @@ namespace SimpleCalculatorWinForms
             }
             if(lblPartial.Text.Equals("0"))
             {
-                lblTotal.Text = null;
-                lblOperation.Text = null;
+                ClearAll();
             }
         }
     }
