@@ -50,6 +50,7 @@
             this.btnBackSpace = new System.Windows.Forms.PictureBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblPartial = new System.Windows.Forms.Label();
+            this.lblOperation = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnBackSpace)).BeginInit();
             this.SuspendLayout();
             // 
@@ -451,12 +452,26 @@
             this.lblPartial.Text = "0";
             this.lblPartial.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // lblOperation
+            // 
+            this.lblOperation.BackColor = System.Drawing.Color.Transparent;
+            this.lblOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOperation.ForeColor = System.Drawing.Color.White;
+            this.lblOperation.Location = new System.Drawing.Point(-243, 186);
+            this.lblOperation.Name = "lblOperation";
+            this.lblOperation.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblOperation.Size = new System.Drawing.Size(315, 45);
+            this.lblOperation.TabIndex = 21;
+            this.lblOperation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SimpleCalculatorWinForms.Properties.Resources.Calculator_Design_Win_Forms1;
             this.ClientSize = new System.Drawing.Size(376, 640);
+            this.Controls.Add(this.lblOperation);
             this.Controls.Add(this.lblPartial);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.btnPlusMinus);
@@ -513,6 +528,7 @@
         private System.Windows.Forms.PictureBox btnBackSpace;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblPartial;
+        private System.Windows.Forms.Label lblOperation;
     }
 }
 

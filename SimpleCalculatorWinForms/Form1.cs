@@ -127,13 +127,15 @@ namespace SimpleCalculatorWinForms
             operation = '\0';
             dec = false;
             lblTotal.Text = null;
+            lblOperation.Text = null;
         }
 
         private void multiplyButton_Click(object sender, EventArgs e)
         {
             num1 = float.Parse(lblPartial.Text);
             operation = '*';
-            lblPartial.Text = "";
+            lblPartial.Text = ""; 
+            lblOperation.Text = "×";
         }
 
         private void divideButton_Click(object sender, EventArgs e)
@@ -141,6 +143,7 @@ namespace SimpleCalculatorWinForms
             num1 = float.Parse(lblPartial.Text);
             operation = '/';
             lblPartial.Text = "";
+            lblOperation.Text = "÷";
         }
 
         private void minusButton_Click(object sender, EventArgs e)
@@ -148,18 +151,22 @@ namespace SimpleCalculatorWinForms
             num1 = float.Parse(lblPartial.Text);
             operation = '-';
             lblPartial.Text = "";
+            lblOperation.Text = "−";
         }
 
         private void plusButton_Click(object sender, EventArgs e)
         {
+            lblPartial.Text = lblPartial.Text + " " + operation;
             num1 = float.Parse(lblPartial.Text);
             operation = '+';
             result = result + num1;
             lblPartial.Text = "";
+            lblOperation.Text = "+";
         }
 
         private void equalButton_Click(object sender, EventArgs e)
         {
+            lblOperation.Text = null;
             result = 0;
             if (lblPartial.Text.Equals("0") == false)
             {
@@ -192,8 +199,9 @@ namespace SimpleCalculatorWinForms
                         break;
                 }
             }
-            //lblPartial.Text = result.ToString();
+            lblPartial.Text = null;
             lblTotal.Text = result.ToString();
+            lblOperation.Text = null;
         }
 
         private void backSpaceButton_Click(object sender, EventArgs e)
@@ -207,7 +215,12 @@ namespace SimpleCalculatorWinForms
             {
                 lblPartial.Text = "0";
             }
+            if(lblPartial.Text.Equals("0"))
+            {
+                lblTotal.Text = null;
+                lblOperation.Text = null;
+            }
         }
-
     }
+
 }
