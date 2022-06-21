@@ -16,5 +16,15 @@ namespace SimpleCalculatorWinForms
         {
             InitializeComponent();
         }
+
+        private void btn0_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Clicked");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Backspace");
+        }
     }
 }
