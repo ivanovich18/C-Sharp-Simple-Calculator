@@ -83,6 +83,16 @@ namespace SimpleCalculatorWinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Final_Design_Calculator {
+            get {
+                object obj = ResourceManager.GetObject("Final Design Calculator", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kanban_clear__1_ {
             get {
                 object obj = ResourceManager.GetObject("kanban-clear (1)", resourceCulture);
