@@ -26,5 +26,10 @@ namespace SimpleCalculatorWinForms
         {
             MessageBox.Show("Backspace");
         }
+
+        private void btnPeriod_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Period");
+        }
     }
 }
