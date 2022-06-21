@@ -458,7 +458,7 @@
             this.lblOperation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblOperation.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOperation.ForeColor = System.Drawing.Color.White;
-            this.lblOperation.Location = new System.Drawing.Point(-243, 186);
+            this.lblOperation.Location = new System.Drawing.Point(-243, 134);
             this.lblOperation.Name = "lblOperation";
             this.lblOperation.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblOperation.Size = new System.Drawing.Size(315, 45);
